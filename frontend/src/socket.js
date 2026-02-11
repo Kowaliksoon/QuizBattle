@@ -1,10 +1,13 @@
 import { io } from "socket.io-client";
 
 // Hardcodowany backend URL
-const socket = io("http://localhost:3000");
 
-socket.on("connect", () => {
-  console.log("Połączono z backendem:", socket.id);
-});
+// socket.js
+const createSocket = ({ userId, username }) => {
+  return io("http://localhost:3000", {
+    auth: { userId, username },
+    autoConnect: true,
+  });
+};
 
-export default socket;
+export default createSocket

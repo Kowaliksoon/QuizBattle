@@ -7,7 +7,7 @@ import "./index.css";
 import Lobby from "./pages/Lobby";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<BrowserRouter>
 			<SnackbarProvider
 				maxSnack={3}
@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 				</Routes>
 			</SnackbarProvider>
 		</BrowserRouter>
-	</React.StrictMode>,
+	/* </React.StrictMode>, */
 );

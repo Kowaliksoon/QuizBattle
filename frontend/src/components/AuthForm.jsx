@@ -41,6 +41,11 @@ export default function AuthForm() {
         return;
       }
 
+
+      localStorage.setItem("userId", data.user.id);
+      localStorage.setItem("username", data.user.username); 
+
+
       enqueueSnackbar(isLogin ? "Zalogowano!" : "Konto utworzone!", { variant: "success" });
       setLoading(false);
       navigate("/lobby");
