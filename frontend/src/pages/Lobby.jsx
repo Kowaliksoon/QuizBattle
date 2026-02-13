@@ -7,15 +7,15 @@ export default function Lobby() {
 
   const userId = localStorage.getItem("userId");
   const username = localStorage.getItem("username");
-
+  
   const [socket, setSocket] = useState(null);
   const [online, setOnline] = useState(0);
   const [searching, setSearching] = useState(false);
   const [queueTime, setQueueTime] = useState(0);
 
-  const [matchRequest, setMatchRequest] = useState(null); // { roomId, opponent }
+  const [matchRequest, setMatchRequest] = useState(null);
   const [matchTimeLeft, setMatchTimeLeft] = useState(10);
-  const [decisionMade, setDecisionMade] = useState(false); // informacja czy kliknąłem Akceptuj/Odrzuć
+  const [decisionMade, setDecisionMade] = useState(false);
 
   const queueTimerRef = useRef(null);
   const matchTimerRef = useRef(null);
@@ -28,7 +28,6 @@ export default function Lobby() {
 
     s.on("onlineCount", setOnline);
 
-    // --- KOLEJKA ---
     s.on("queueJoined", () => {
       setSearching(true);
       setQueueTime(0);
@@ -44,7 +43,6 @@ export default function Lobby() {
       setQueueTime(0);
     });
 
-    // --- MATCH REQUEST ---
     s.on("matchRequest", ({ roomId, opponent }) => {
       setMatchRequest({ roomId, opponent });
       setMatchTimeLeft(10);
@@ -64,33 +62,28 @@ export default function Lobby() {
       }, 1000);
     });
 
-    // --- MATCH REJECTED ---
     s.on("matchRejected", ({ rejectedUserId }) => {
       setMatchRequest(null);
       setDecisionMade(false);
       if (userId !== rejectedUserId) {
-        // jeśli nie odrzuciłem ja, zostaję w kolejce
         setSearching(true);
       } else {
-        // jeśli ja odrzuciłem → już nie w kolejce
         setSearching(false);
       }
     });
 
-    // --- MATCH TIMEOUT ---
     s.on("matchTimeout", ({ timeoutUserId }) => {
       setMatchRequest(null);
       setDecisionMade(false);
       if (userId === timeoutUserId) {
-        setSearching(false); // timeout → wyrzucony z kolejki
+        setSearching(false);
       } else {
-        setSearching(true); // przeciwnik timeout → ja nadal w kolejce
+        setSearching(true);
       }
     });
 
-    // --- MATCH ACCEPTED ---
-    s.on("matchAccepted", ({ roomId, players }) => {
-      navigate(`/game/${roomId}`, { state: { players } });
+    s.on("matchAccepted", ({ roomId, players, starter }) => {
+      navigate(`/game/${roomId}`, { state: { roomId, players, starter } });
     });
 
     return () => {
@@ -112,87 +105,224 @@ export default function Lobby() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md text-center space-y-6">
-        <h1 className="text-3xl font-bold text-gray-800">Lobby</h1>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
 
-        <p className="text-gray-600">
-          Online graczy: <span className="font-semibold text-blue-600">{online}</span>
-        </p>
+      <div className="relative z-10 w-full max-w-2xl">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-6xl font-black text-white mb-2 drop-shadow-2xl tracking-tight">
+            Quiz<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Battle</span>
+          </h1>
+          <p className="text-purple-200 text-lg font-medium">Pokaż swoją wiedzę!</p>
+        </div>
 
-        {/* --- Brak matchRequest → pokazujemy kolejkę lub przycisk Zagraj --- */}
-        {!matchRequest && (
-          <>
-            <button
-              onClick={joinQueue}
-              disabled={searching}
-              className="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition disabled:opacity-50"
-            >
-              {searching ? "Szukanie przeciwnika..." : "Zagraj"}
-            </button>
-
-            {searching && (
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between items-center text-gray-700">
-                  <span>Czas w kolejce:</span>
-                  <span className="font-semibold text-blue-600">{queueTime}s</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div
-                    className="bg-blue-600 h-3 rounded-full transition-all"
-                    style={{ width: `${Math.min(queueTime * 5, 100)}%` }}
-                  />
-                </div>
-                <button
-                  onClick={leaveQueue}
-                  className="w-full py-2 rounded-xl bg-red-600 text-white font-semibold hover:bg-red-700 transition"
-                >
-                  Anuluj
-                </button>
+        {/* Main card */}
+        <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
+          {/* Stats bar */}
+          <div className="bg-gradient-to-r from-purple-600/50 to-pink-600/50 backdrop-blur-sm px-6 py-4 border-b border-white/10">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-white font-semibold text-sm">Gracze online</span>
               </div>
-            )}
-          </>
-        )}
-
-        {/* --- MatchRequest → pokazujemy decyzję przeciwnika + timer --- */}
-        {matchRequest && (
-          <div className="p-4 bg-yellow-100 rounded-xl space-y-4">
-            <p>
-              Przeciwnik: <span className="font-semibold text-gray-800">{matchRequest.opponent}</span>
-            </p>
-
-            <p>
-              Czas na decyzję: <span className="font-bold text-red-600">{matchTimeLeft}s</span>
-            </p>
-
-            <div className="w-full bg-gray-200 rounded-full h-3">
-              <div
-                className={`h-3 rounded-full transition-all ${
-                  decisionMade ? "bg-green-500" : "bg-red-500"
-                }`}
-                style={{ width: `${((10 - matchTimeLeft) / 10) * 100}%` }}
-              />
-            </div>
-
-            <div className="flex gap-4 mt-2">
-              <button
-                onClick={acceptMatch}
-                disabled={decisionMade}
-                className="flex-1 py-2 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition disabled:opacity-50"
-              >
-                Akceptuj
-              </button>
-              <button
-                onClick={rejectMatch}
-                disabled={decisionMade}
-                className="flex-1 py-2 bg-red-600 text-white rounded-xl font-semibold hover:bg-red-700 transition disabled:opacity-50"
-              >
-                Odrzuć
-              </button>
+              <span className="text-white font-bold text-2xl">{online}</span>
             </div>
           </div>
-        )}
+
+          <div className="p-8">
+            {/* No match request - Show play button or queue */}
+            {!matchRequest && (
+              <div className="space-y-6">
+                {!searching ? (
+                  <button
+                    onClick={joinQueue}
+                    className="w-full py-6 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-2xl font-black hover:from-yellow-500 hover:to-orange-600 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl relative overflow-hidden group"
+                  >
+                    <span className="relative z-10">🎮 ZAGRAJ TERAZ</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </button>
+                ) : (
+                  <div className="space-y-6">
+                    {/* Searching animation */}
+                    <div className="text-center space-y-4">
+                      <div className="flex justify-center items-center gap-3">
+                        <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"></div>
+                        <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+                      </div>
+                      <h3 className="text-white text-2xl font-bold">Szukamy przeciwnika...</h3>
+                      <p className="text-purple-200 text-lg">W kolejce od: <span className="text-yellow-400 font-bold">{queueTime}s</span></p>
+                    </div>
+
+                    {/* Progress bar */}
+                    <div className="relative h-4 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${Math.min(queueTime * 5, 100)}%` }}
+                      ></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+                    </div>
+
+                    {/* Cancel button */}
+                    <button
+                      onClick={leaveQueue}
+                      className="w-full py-4 rounded-xl bg-red-500/20 border-2 border-red-500 text-red-300 font-bold hover:bg-red-500/30 transition-all"
+                    >
+                      ✕ Anuluj wyszukiwanie
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Match request - Opponent found! */}
+            {matchRequest && (
+              <div className="space-y-6 animate-fadeIn">
+                {/* Opponent found header */}
+                <div className="text-center space-y-3 pb-6 border-b border-white/10">
+                  <div className="inline-block px-6 py-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full text-white font-bold text-sm uppercase tracking-wider animate-pulse">
+                    ⚡ Znaleziono przeciwnika!
+                  </div>
+                  <h2 className="text-white text-3xl font-black">Gotowy na pojedynek?</h2>
+                </div>
+
+                {/* Opponent card */}
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-purple-200 text-sm font-semibold uppercase tracking-wide">Twój przeciwnik</span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-green-400 text-xs font-bold">ONLINE</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white text-2xl font-black shadow-lg">
+                      {matchRequest.opponent.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                      <p className="text-white text-2xl font-bold">{matchRequest.opponent}</p>
+                      <p className="text-purple-200 text-sm">Gracz QuizBattle</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Timer */}
+                <div className="text-center space-y-3">
+                  <div className="inline-flex items-center gap-3 px-6 py-3 bg-red-500/20 rounded-full border border-red-500/50">
+                    <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-white font-bold text-xl">{matchTimeLeft}s</span>
+                  </div>
+                  
+                  {/* Progress ring */}
+                  <div className="flex justify-center">
+                    <div className="relative w-32 h-32">
+                      <svg className="transform -rotate-90 w-32 h-32">
+                        <circle
+                          cx="64"
+                          cy="64"
+                          r="60"
+                          stroke="currentColor"
+                          strokeWidth="8"
+                          fill="none"
+                          className="text-white/10"
+                        />
+                        <circle
+                          cx="64"
+                          cy="64"
+                          r="60"
+                          stroke="currentColor"
+                          strokeWidth="8"
+                          fill="none"
+                          className={`${matchTimeLeft <= 3 ? 'text-red-500' : 'text-yellow-400'} transition-all duration-1000`}
+                          strokeDasharray={`${2 * Math.PI * 60}`}
+                          strokeDashoffset={`${2 * Math.PI * 60 * (1 - matchTimeLeft / 10)}`}
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {decisionMade && (
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full border border-green-500">
+                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-green-400 font-semibold">Czekamy na przeciwnika...</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Action buttons */}
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <button
+                    onClick={acceptMatch}
+                    disabled={decisionMade}
+                    className="py-5 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg font-black hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg hover:shadow-xl"
+                  >
+                    <span className="block text-2xl mb-1">✓</span>
+                    AKCEPTUJ
+                  </button>
+                  <button
+                    onClick={rejectMatch}
+                    disabled={decisionMade}
+                    className="py-5 rounded-xl bg-gradient-to-r from-red-500 to-pink-600 text-white text-lg font-black hover:from-red-600 hover:to-pink-700 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg hover:shadow-xl"
+                  >
+                    <span className="block text-2xl mb-1">✕</span>
+                    ODRZUĆ
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Footer info */}
+        <div className="text-center mt-6">
+          <p className="text-purple-300 text-sm">
+            Zalogowany jako <span className="font-bold text-white">{username}</span>
+          </p>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
