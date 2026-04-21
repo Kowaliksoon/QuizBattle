@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "6989ff1bd6d32190c7472e38"
+  },
+  "username": "ForgeK",
+  "email": "barti.kowalik@interia.pl",
+  "password": "123123123q",
+  "createdAt": {
+    "$date": "2026-02-09T15:36:59.147Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T15:36:59.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a0282d6d32190c7472e3d"
+  },
+  "username": "syriax2",
+  "email": "syriax12@wp.pl",
+  "password": "1234512345q",
+  "createdAt": {
+    "$date": "2026-02-09T15:51:30.145Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T15:51:30.145Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a06fe77ecd8eac8667e6c"
+  },
+  "username": "AntriX",
+  "email": "anna123@gmail.com",
+  "password": "123",
+  "createdAt": {
+    "$date": "2026-02-09T16:10:38.128Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T16:10:38.128Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a072d77ecd8eac8667e79"
+  },
+  "username": "syriax3",
+  "email": "piotrskow@gmail.com",
+  "password": "123",
+  "createdAt": {
+    "$date": "2026-02-09T16:11:25.866Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T16:11:25.866Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a089677ecd8eac8667e7c"
+  },
+  "username": "connor09",
+  "email": "connor09123@gmail.com",
+  "password": "123",
+  "createdAt": {
+    "$date": "2026-02-09T16:17:26.945Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T16:17:26.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a0ae601f80f5ce07eeddb"
+  },
+  "username": "AdameK",
+  "email": "adamks@gmail.com",
+  "password": "12345",
+  "createdAt": {
+    "$date": "2026-02-09T16:27:18.103Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T16:27:18.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a0b8a01f80f5ce07eede4"
+  },
+  "username": "rikardo",
+  "email": "rikardo@gmail.com",
+  "password": "123",
+  "createdAt": {
+    "$date": "2026-02-09T16:30:02.473Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T16:30:02.473Z"
+  },
+  "__v": 0
+}]

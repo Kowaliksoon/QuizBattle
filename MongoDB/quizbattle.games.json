@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "69e7bc56647a8d1db3e52796"
+  },
+  "players": [
+    {
+      "userId": "698a0282d6d32190c7472e3d",
+      "username": "syriax2",
+      "score": 2700,
+      "correctAnswers": 8,
+      "wrongAnswers": 2,
+      "_id": {
+        "$oid": "69e7bd44647a8d1db3e527a8"
+      }
+    },
+    {
+      "userId": "6989ff1bd6d32190c7472e38",
+      "username": "Gracz",
+      "score": 1200,
+      "correctAnswers": 9,
+      "wrongAnswers": 6,
+      "_id": {
+        "$oid": "69e7bd44647a8d1db3e527a9"
+      }
+    }
+  ],
+  "status": "finished",
+  "createdAt": {
+    "$date": "2026-04-21T18:05:10.616Z"
+  },
+  "__v": 0,
+  "finishedAt": {
+    "$date": "2026-04-21T18:09:08.899Z"
+  },
+  "winner": "syriax2"
+}]

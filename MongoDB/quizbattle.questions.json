@@ -1,0 +1,666 @@
+[{
+  "_id": {
+    "$oid": "698f387042e50bfef1c43ee9"
+  },
+  "category": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "difficulty": 100,
+  "question": "W którym roku wybuchła I wojna światowa?",
+  "answers": [
+    "1914",
+    "1918",
+    "1939",
+    "1940"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e80df638f763a1468c06"
+  },
+  "category": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "difficulty": 100,
+  "question": "W którym roku doszło do bitwy pod Wiedniem, w której brał udział Jan III Sobieski?",
+  "answers": [
+    "1655",
+    "1683",
+    "1701",
+    "1610"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e848f638f763a1468c08"
+  },
+  "category": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "difficulty": 500,
+  "question": "Który władca przeniósł stolicę Polski z Krakowa do Warszawy?",
+  "answers": [
+    "Jan III Sobieski",
+    "Stefan Batory",
+    "Zygmunt III Waza",
+    "August II Mocny"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e870f638f763a1468c0a"
+  },
+  "category": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "difficulty": 400,
+  "question": "W którym roku uchwalono Konstytucję 3 maja?",
+  "answers": [
+    "1789",
+    "1791",
+    "1793",
+    "1807"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e89ef638f763a1468c0c"
+  },
+  "category": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "difficulty": 300,
+  "question": "Jak nazywała się unia zawarta w 1569 roku między Polską a Litwą?",
+  "answers": [
+    "Unia w Krewie",
+    "Unia Lubelska",
+    "Unia Brzeska",
+    "Unia Hadziacka"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e8c9f638f763a1468c0e"
+  },
+  "category": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "difficulty": 200,
+  "question": "W którym roku Polska wstąpiła do Unii Europejskiej",
+  "answers": [
+    "2000",
+    "2002",
+    "2004",
+    "2006"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e916f638f763a1468c13"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 100,
+  "question": "Jaka nazywa się stolica Francji?",
+  "answers": [
+    "Madryt",
+    "Berlin",
+    "Paryż",
+    "Rzym"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e936f638f763a1468c15"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 100,
+  "question": "Najdłuższa rzeka świata to:",
+  "answers": [
+    "Amazonka",
+    "Nil",
+    "Tamiza",
+    "Jangcy"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e954f638f763a1468c17"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 200,
+  "question": "Na którym kontynencie leży Brazylia?",
+  "answers": [
+    "Ameryka Północna",
+    "Afryka",
+    "Ameryka Południowa",
+    "Azja"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e96ff638f763a1468c19"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 200,
+  "question": "Które państwo ma największą powierzchnię na świecie?",
+  "answers": [
+    "USA",
+    "Chiny",
+    "Kanada",
+    "Rosja"
+  ],
+  "correctIndex": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e9a4f638f763a1468c1b"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 300,
+  "question": "Jak nazywa się najwyższy szczyt Europy?",
+  "answers": [
+    "Mont Blanc",
+    "Matterhorn",
+    "Elbrus",
+    "Grossglockner"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2eb27f638f763a1468c1d"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 300,
+  "question": "Stolica Australii to:",
+  "answers": [
+    "Sydney",
+    "Melbourne",
+    "Canberra",
+    "Perth"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2eb4bf638f763a1468c1f"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 400,
+  "question": "Który kraj NIE graniczy z Polską?",
+  "answers": [
+    "Słowacja",
+    "Węgry",
+    "Litwa",
+    "Czechy"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2eb60f638f763a1468c21"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 400,
+  "question": "Jak nazywa się cieśnina oddzielająca Europę od Afryki?",
+  "answers": [
+    "Cieśnina Bosfor",
+    "Cieśnina Malakka",
+    "Cieśnina Gibraltarska",
+    "Cieśnina Beringa"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2eb7df638f763a1468c23"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 400,
+  "question": "Która pustynia jest największą gorącą pustynią na świecie?",
+  "answers": [
+    "Gobi",
+    "Kalahari",
+    "Sahara",
+    "Atakama"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ebb3f638f763a1468c25"
+  },
+  "category": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "difficulty": 500,
+  "question": "Jakie państwo ma największą liczbę wysp na świecie?",
+  "answers": [
+    "Indonezja",
+    "Filipiny",
+    "Norwegia",
+    "Szwecja"
+  ],
+  "correctIndex": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ec81f638f763a1468c2e"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 100,
+  "question": "Jak nazywa się siła przyciągająca ciała do Ziemi?",
+  "answers": [
+    "Magnetyzm",
+    "Grawitacja",
+    "Tarcie",
+    "Ciśnienie"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ec9ef638f763a1468c30"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 100,
+  "question": "Jaką jednostką mierzymy temperaturę w układzie SI?",
+  "answers": [
+    "Stopień Celsjusza",
+    "Fahrenheit",
+    "Kelvin",
+    "Wat"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ecaff638f763a1468c32"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 200,
+  "question": "Jaką jednostką mierzymy prędkość?",
+  "answers": [
+    "m/s",
+    "N",
+    "J",
+    "Pa"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ecc5f638f763a1468c34"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 200,
+  "question": "Kto sformułował trzy zasady dynamiki?",
+  "answers": [
+    "Albert Einstein",
+    "Galileusz",
+    "Isaac Newton",
+    "Nikola Tesla"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ece2f638f763a1468c36"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 300,
+  "question": "Jak nazywa się zjawisko załamania światła przy przejściu między ośrodkami?",
+  "answers": [
+    "Dyfrakcja",
+    "Odbicie",
+    "Refrakcja",
+    "Polaryzacja"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ecf6f638f763a1468c38"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 300,
+  "question": "Jaka jest jednostka siły w układzie SI?",
+  "answers": [
+    "Wat",
+    "Dżul",
+    "Newton",
+    "Om"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ed17f638f763a1468c3a"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 400,
+  "question": "Jak nazywa się prawo opisujące zależność napięcia od natężenia prądu?",
+  "answers": [
+    "Prawo Archimedesa",
+    "Prawo Ohma",
+    "Prawo Pascala",
+    "Prawo Hooke’a"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ed34f638f763a1468c3c"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 400,
+  "question": "Jak nazywa się cząstka elementarna bez ładunku elektrycznego w jądrze atomu?",
+  "answers": [
+    "Proton",
+    "Elektron",
+    "Neutron",
+    "Foton"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ed4ef638f763a1468c3e"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 500,
+  "question": "Jaką prędkość ma światło w próżni (w przybliżeniu)?",
+  "answers": [
+    "150 000 km/s",
+    "150 000 km/s",
+    "300 000 km/s",
+    "450 000 km/s"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ed6bf638f763a1468c40"
+  },
+  "category": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "difficulty": 500,
+  "question": "Jak nazywa się zjawisko emisji elektronów z metalu pod wpływem światła?",
+  "answers": [
+    "Jonizacja",
+    "Fotoefekt",
+    "Indukcja",
+    "Konwekcja"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2eda3f638f763a1468c45"
+  },
+  "category": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "difficulty": 100,
+  "question": "le zawodników liczy drużyna na boisku w piłce nożnej?",
+  "answers": [
+    "10",
+    "11",
+    "12",
+    "9"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2edbcf638f763a1468c47"
+  },
+  "category": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "difficulty": 100,
+  "question": "Jak nazywa się główny turniej piłkarski organizowany co 4 lata, w którym rywalizują reprezentacje narodowe?",
+  "answers": [
+    "Liga Mistrzów",
+    "Mistrzostwa Europy",
+    "Mistrzostwa Świata",
+    "Puchar Konfederacji"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2edeef638f763a1468c49"
+  },
+  "category": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "difficulty": 200,
+  "question": "W którym kraju powstała piłka nożna w obecnej formie?",
+  "answers": [
+    "Niemcy",
+    "Włochy",
+    "Anglia",
+    "Hiszpania"
+  ],
+  "correctIndex": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2eed2f638f763a1468c4b"
+  },
+  "category": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "difficulty": 300,
+  "question": "Kto zdobył Złotą Piłkę FIFA 2021?",
+  "answers": [
+    "Lionel Messi",
+    "Cristiano Ronaldo",
+    "Robert Lewandowski",
+    "Neymar"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ef17f638f763a1468c4d"
+  },
+  "category": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "difficulty": 400,
+  "question": "Która drużyna wygrała Ligę Mistrzów UEFA 2021/2022?",
+  "answers": [
+    "Real Madryt",
+    "Real Madryt",
+    "Manchester City",
+    "Chelsea"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ef9cf638f763a1468c4f"
+  },
+  "category": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "difficulty": 500,
+  "question": "Kto wygrał Złotą Piłkę w 2022 roku?",
+  "answers": [
+    "Karim Benzema",
+    "Lionel Messi",
+    "Robert Lewandowski",
+    "Luka Modrić"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2f2b9f638f763a1468c54"
+  },
+  "category": {
+    "$oid": "69a2f1fef638f763a1468c51"
+  },
+  "difficulty": 200,
+  "question": "„Boska Komedia” jest dziełem:",
+  "answers": [
+    "Dante Alighieri",
+    "Giovanni Boccaccio",
+    "Francesco Petrarca",
+    "Ludovico Ariosto"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2f2d6f638f763a1468c56"
+  },
+  "category": {
+    "$oid": "69a2f1fef638f763a1468c51"
+  },
+  "difficulty": 100,
+  "question": "„Lalka” to powieść napisana przez:",
+  "answers": [
+    "Henryka Sienkiewicza",
+    "Bolesława Prusa",
+    "Stefana Żeromskiego",
+    "Władysława Reymonta"
+  ],
+  "correctIndex": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2f3d4f638f763a1468c58"
+  },
+  "category": {
+    "$oid": "69a2f1fef638f763a1468c51"
+  },
+  "difficulty": 300,
+  "question": "Kto w „Lalce” wspiera Wokulskiego i jest narratorem pamiętnika?",
+  "answers": [
+    "Ignacy Rzecki",
+    "Izabela Łęcka",
+    "Tomasz Łęcki",
+    "Julian Ochocki"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2fac6f638f763a1468c5a"
+  },
+  "category": {
+    "$oid": "69a2f1fef638f763a1468c51"
+  },
+  "difficulty": 400,
+  "question": "Kto prowadzi dochodzenie w sprawie morderstwa Alony Iwanowny w \"Zbrodni i Karze\"?",
+  "answers": [
+    "Porfiry Pietrowicz",
+    "Piotr Łużyn",
+    "Sonia Marmieładow",
+    "Katarzyna Iwanowna"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2fbf6f638f763a1468c5c"
+  },
+  "category": {
+    "$oid": "69a2f1fef638f763a1468c51"
+  },
+  "difficulty": 500,
+  "question": "W którym roku została opublikowana powieść „Syzyfowe prace” Stefana Żeromskiego?",
+  "answers": [
+    "1897",
+    "1901",
+    "1885",
+    "1890"
+  ],
+  "correctIndex": 0,
+  "__v": 0
+}]

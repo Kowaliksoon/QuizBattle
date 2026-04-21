@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "698f380242e50bfef1c43ee6"
+  },
+  "name": "Historia",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2e8e3f638f763a1468c10"
+  },
+  "name": "Geografia",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ec68f638f763a1468c2b"
+  },
+  "name": "Fizyka",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2ed87f638f763a1468c42"
+  },
+  "name": "Piłka nożna",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2f1fef638f763a1468c51"
+  },
+  "name": "Literatura",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69e4f462b37fa02444e3e6b7"
+  },
+  "name": "Muzyka",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69e7bda3647a8d1db3e527bb"
+  },
+  "name": "Astronomia",
+  "__v": 0
+}]

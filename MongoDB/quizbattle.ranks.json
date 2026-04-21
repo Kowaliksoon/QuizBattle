@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "69e3b12cff2b546e6f67ee23"
+  },
+  "userId": "6989ff1bd6d32190c7472e38",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-18T16:28:28.177Z"
+  },
+  "rank": "🎓 Scholar",
+  "rp": 516,
+  "updatedAt": {
+    "$date": "2026-04-21T18:09:08.896Z"
+  },
+  "username": "Gracz"
+},
+{
+  "_id": {
+    "$oid": "69e3b12cff2b546e6f67ee24"
+  },
+  "userId": "698a0282d6d32190c7472e3d",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-18T16:28:28.185Z"
+  },
+  "rank": "📚 Apprentice",
+  "rp": 293,
+  "updatedAt": {
+    "$date": "2026-04-21T18:09:08.895Z"
+  },
+  "username": "syriax2"
+}]
