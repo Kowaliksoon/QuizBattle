@@ -6,22 +6,14 @@ const GameSchema = new mongoose.Schema({
       userId: String,
       username: String,
       score: { type: Number, default: 0 },
-      answers: [
-        {
-          questionId: String,
-          answerIndex: Number,
-          correct: Boolean,
-          points: Number
-        }
-      ]
+      correctAnswers: { type: Number, default: 0 },
+      wrongAnswers: { type: Number, default: 0 },
     }
   ],
-  questions: [
-    { categoryId: String, questionId: String, used: { type: Boolean, default: false } }
-  ],
-  currentQuestion: { type: Number, default: 0 },
-  status: { type: String, default: "playing" }, // "finished"
-  createdAt: { type: Date, default: Date.now }
+  winner: String,
+  status: { type: String, default: "playing" },
+  createdAt: { type: Date, default: Date.now },
+  finishedAt: Date,
 });
 
 export default mongoose.model("Game", GameSchema);
